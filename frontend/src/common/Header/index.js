@@ -25,7 +25,7 @@ const Header = (props) => {
                     </IconButton>
                     <Link to="/" className={classes.appLink}>
                         <Typography className={classes.appTitle} >
-                            🔊 Text to Audio
+                            🏞️ Text to IMage
                         </Typography>
                     </Link>
 

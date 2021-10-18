@@ -1,0 +1,6 @@
+# misc
+.DS_Store
+/secrets
+scratch.txt
+_test
+outputs

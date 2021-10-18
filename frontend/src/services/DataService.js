@@ -6,8 +6,8 @@ const DataService = {
     Init: function () {
         // Any application initialization logic comes here
     },
-    Text2Audio: async function (obj) {
-        return await axios.post(BASE_API_URL + "/text2audio", obj);
+    Text2Image: async function (obj) {
+        return await axios.post(BASE_API_URL + "/text2image", obj);
     },
 }
 

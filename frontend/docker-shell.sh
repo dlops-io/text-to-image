@@ -4,7 +4,7 @@
 set -e
 
 # Define some environment variables
-export IMAGE_NAME="text-to-audio-frontend"
+export IMAGE_NAME="text-to-image-frontend"
 export BASE_DIR=$(pwd)
 
 # Build the image based on the Dockerfile

@@ -19,6 +19,7 @@ import TextField from '@material-ui/core/TextField';
 
 
 import DataService from "../../services/DataService";
+import { BASE_API_URL } from "../../services/Common";
 import styles from './styles';
 
 
@@ -38,9 +39,9 @@ const Home = (props) => {
     }, []);
 
     // Handlers
-    const handleOnSynthesisClick = () => {
+    const handleOnImageClick = () => {
         console.log(text)
-        DataService.Text2Audio({ "text": text })
+        DataService.Text2Image({ "text": text })
             .then(function (response) {
                 console.log(response.data);
                 var ops = [...outputs];
@@ -61,12 +62,12 @@ const Home = (props) => {
                         <Grid item md={5}>
                             <br />
                             <Typography>
-                                Enter some text and click the Speak button
+                                Enter some text and click the Image button
                             </Typography>
                             <br />
                             <TextField
 
-                                label="Text for Speech Synthesis"
+                                label="Text for Image Generation"
                                 multiline
                                 maxRows={4}
                                 variant="outlined"
@@ -77,7 +78,7 @@ const Home = (props) => {
                             <br />
                             <br />
                             <br />
-                            <Icon className={classes.stopRecording} onClick={() => handleOnSynthesisClick()}>record_voice_over</Icon>
+                            <Icon className={classes.stopRecording} onClick={() => handleOnImageClick()}>image</Icon>
                         </Grid>
                         <Grid item md={7}>
                             <TableContainer component={Paper}>
@@ -85,7 +86,7 @@ const Home = (props) => {
                                     <TableHead>
                                         <TableRow>
                                             <TableCell>Text</TableCell>
-                                            <TableCell>Audio</TableCell>
+                                            <TableCell>Image</TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
@@ -94,10 +95,7 @@ const Home = (props) => {
 
                                                 <TableCell>{item.text}</TableCell>
                                                 <TableCell>
-                                                    <audio controls>
-                                                        <source src={"http://localhost:9000/get_audio_data?path=" + item.audio_path} type="audio/mp3" />
-                                                        Your browser does not support the audio element.
-                                                    </audio>
+                                                    <img src={BASE_API_URL + "/get_image?path=" + item.image_path}></img>
                                                 </TableCell>
                                             </TableRow>
                                         )}

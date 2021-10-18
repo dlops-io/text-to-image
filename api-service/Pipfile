@@ -13,7 +13,7 @@ fastapi = "*"
 aiofiles = "*"
 pynvml = "*"
 psutil = "*"
-google-cloud-texttospeech = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.8"

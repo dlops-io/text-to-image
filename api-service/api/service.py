@@ -4,7 +4,7 @@ from starlette.requests import Request
 from starlette.responses import JSONResponse
 from starlette.staticfiles import StaticFiles
 
-from api.routers import audio
+from api.routers import image
 
 
 # Setup FastAPI app
@@ -37,4 +37,4 @@ async def get_index():
     }
 
 # Additional routers here
-app.include_router(audio.router)
+app.include_router(image.router)
